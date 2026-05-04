@@ -1,0 +1,42 @@
+---
+title: "Exploring Penguine Species"
+format: dashboard
+editor: visual
+jupyter: python3
+theme: 
+      - darkly
+author: "Sanodya Jinadasa"
+---
+
+```{python}
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the penguins dataset
+penguins = sns.load_dataset("penguins")
+
+#| title: "First 10 Rows of Penguin Data"
+# Simply mentioning the dataframe or using .head() inside 
+# a block will display the table in the dashboard.
+penguins.head(10)
+
+```
+
+
+# Overview
+
+
+# Body Size Relationship
+
+2
+
+# Gender wise Comparison
+
+3
+
+# About
+
+4
+

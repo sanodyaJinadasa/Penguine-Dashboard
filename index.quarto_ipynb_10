@@ -1,0 +1,67 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Exploring Penguine Species\"\n",
+        "format: dashboard\n",
+        "editor: visual\n",
+        "jupyter: python3\n",
+        "theme: \n",
+        "      - darkly\n",
+        "author: \"Sanodya Jinadasa\"\n",
+        "---"
+      ],
+      "id": "3ae44dd4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "# Load the penguins dataset\n",
+        "penguins = sns.load_dataset(\"penguins\")"
+      ],
+      "id": "0f9db5ce",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview\n",
+        "penguins.head()\n",
+        "1\n",
+        "\n",
+        "# Body Size Relationship\n",
+        "\n",
+        "2\n",
+        "\n",
+        "# Gender wise Comparison\n",
+        "\n",
+        "3\n",
+        "\n",
+        "# About\n",
+        "\n",
+        "4\n"
+      ],
+      "id": "73e1ac5d"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
