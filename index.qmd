@@ -36,20 +36,37 @@ penguins.head(10)
 sns.scatterplot(data=penguins, x="bill_length_mm", y="bill_depth_mm", hue="species")
 plt.title("Bill Length vs. Bill Depth")
 plt.show()
+
+sns.scatterplot(data=penguins, x="bill_length_mm", y="bill_depth_mm", hue="species")
+plt.title("Bill Length vs. Bill Depth")
+plt.show()
+
+sns.violinplot(data=penguins, x="species", y="body_mass_g", inner="quart")
+plt.title("Body Mass (g) by Species")
+plt.show()
 ```
 
 # Gender wise Comparison
 
 ```{python}
-sns.scatterplot(data=penguins, x="bill_length_mm", y="bill_depth_mm", hue="species")
-plt.title("Bill Length vs. Bill Depth")
+sns.barplot(data=penguins, x="species", y="body_mass_g", hue="sex")
+plt.title("Average Body Mass: Male vs Female")
 plt.show()
+
+
 ```
 
 # About
 
-```{python}
-sns.scatterplot(data=penguins, x="bill_length_mm", y="bill_depth_mm", hue="species")
-plt.title("Bill Length vs. Bill Depth")
-plt.show()
-```
+Dataset Information
+The Palmer Penguins dataset is a great alternative to the Iris dataset for data exploration.
+
+Key Variables:
+
+Species: Adelie, Chinstrap, or Gentoo.
+
+Island: Torgersen, Biscoe, or Dream.
+
+Body Mass: Measured in grams.
+
+Bill Dimensions: Length and depth in millimeters.
