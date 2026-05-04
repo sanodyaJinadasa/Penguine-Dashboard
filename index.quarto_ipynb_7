@@ -1,0 +1,136 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Exploring Penguine Species\"\n",
+        "format: dashboard\n",
+        "editor: visual\n",
+        "jupyter: python3\n",
+        "theme: \n",
+        "      - darkly\n",
+        "author: \"Sanodya Jinadasa\"\n",
+        "---"
+      ],
+      "id": "61123037"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "# Load the penguins dataset\n",
+        "penguins = sns.load_dataset(\"penguins\")\n"
+      ],
+      "id": "8cce378d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview"
+      ],
+      "id": "e62c344d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "First 10 Rows of Penguin Data"
+      },
+      "source": [
+        "# Simply mentioning the dataframe or using .head() inside \n",
+        "# a block will display the table in the dashboard.\n",
+        "penguins.head(10)"
+      ],
+      "id": "4fd476ff",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Body Size Relationship"
+      ],
+      "id": "6cc91c96"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.scatterplot(data=penguins, x=\"bill_length_mm\", y=\"bill_depth_mm\", hue=\"species\")\n",
+        "plt.title(\"Bill Length vs. Bill Depth\")\n",
+        "plt.show()\n",
+        "\n",
+        "sns.scatterplot(data=penguins, x=\"bill_length_mm\", y=\"bill_depth_mm\", hue=\"species\")\n",
+        "plt.title(\"Bill Length vs. Bill Depth\")\n",
+        "plt.show()\n",
+        "\n",
+        "sns.violinplot(data=penguins, x=\"species\", y=\"body_mass_g\", inner=\"quart\")\n",
+        "plt.title(\"Body Mass (g) by Species\")\n",
+        "plt.show()"
+      ],
+      "id": "e774b16a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Gender wise Comparison"
+      ],
+      "id": "89bfcef2"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.barplot(data=penguins, x=\"species\", y=\"body_mass_g\", hue=\"sex\")\n",
+        "plt.title(\"Average Body Mass: Male vs Female\")\n",
+        "plt.show()\n"
+      ],
+      "id": "fea8c87b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# About\n",
+        "\n",
+        "Dataset Information\n",
+        "The Palmer Penguins dataset is a great alternative to the Iris dataset for data exploration.\n",
+        "\n",
+        "Key Variables:\n",
+        "\n",
+        "Species: Adelie, Chinstrap, or Gentoo.\n",
+        "\n",
+        "Island: Torgersen, Biscoe, or Dream.\n",
+        "\n",
+        "Body Mass: Measured in grams.\n",
+        "\n",
+        "Bill Dimensions: Length and depth in millimeters."
+      ],
+      "id": "1cede3f1"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
