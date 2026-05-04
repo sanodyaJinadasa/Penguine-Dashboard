@@ -1,0 +1,127 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Exploring Penguine Species\"\n",
+        "format: dashboard\n",
+        "editor: visual\n",
+        "jupyter: python3\n",
+        "theme: \n",
+        "      - darkly\n",
+        "author: \"Sanodya Jinadasa\"\n",
+        "---"
+      ],
+      "id": "37050e8d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "# Load the penguins dataset\n",
+        "penguins = sns.load_dataset(\"penguins\")\n"
+      ],
+      "id": "1907d3b4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview"
+      ],
+      "id": "f2db34af"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "First 10 Rows of Penguin Data"
+      },
+      "source": [
+        "# Simply mentioning the dataframe or using .head() inside \n",
+        "# a block will display the table in the dashboard.\n",
+        "penguins.head(10)"
+      ],
+      "id": "c488aa51",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Body Size Relationship"
+      ],
+      "id": "3764bfa9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.scatterplot(data=penguins, x=\"bill_length_mm\", y=\"bill_depth_mm\", hue=\"species\")\n",
+        "plt.title(\"Bill Length vs. Bill Depth\")\n",
+        "plt.show()"
+      ],
+      "id": "23ad89bf",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Gender wise Comparison"
+      ],
+      "id": "a1bcd80e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.scatterplot(data=penguins, x=\"bill_length_mm\", y=\"bill_depth_mm\", hue=\"species\")\n",
+        "plt.title(\"Bill Length vs. Bill Depth\")\n",
+        "plt.show()"
+      ],
+      "id": "cab53218",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# About"
+      ],
+      "id": "108a3361"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.scatterplot(data=penguins, x=\"bill_length_mm\", y=\"bill_depth_mm\", hue=\"species\")\n",
+        "plt.title(\"Bill Length vs. Bill Depth\")\n",
+        "plt.show()"
+      ],
+      "id": "f2d4277d",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
