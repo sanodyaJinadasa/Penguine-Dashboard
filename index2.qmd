@@ -1,0 +1,106 @@
+---
+title: "EV market Analysis Dashboard"
+format:
+  dashboard:
+    orientation: columns
+    theme: cosmo
+jupyter: python3
+author: Sanodya Jinadasa
+---
+
+```{python}
+import pandas as pd
+import plotly.express as px
+from IPython.display import Markdown
+
+df = pd.read_csv("ev_market_2026.csv")
+
+```
+
+
+
+# Overview
+
+## Row
+```{python}
+df.head(5)
+```
+
+
+
+### Column
+```{python}
+#| echo: false
+total_ev = df.shape[0]
+
+f"""
+<div style="
+    background:#e3f2fd;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;">
+    <h4>Total Vehicles</h4>
+    <h2>{total_ev}</h2>
+</div>
+"""
+```
+
+### Column
+```{python}
+#| echo: false
+avg_price = round(df["price_usd"].mean(), 0).item()
+
+Markdown(f"""
+<div style="background:#e8f5e9; padding:15px; border-radius:10px; text-align:center;">
+    <h4 style="margin:0;">Avg Price ($)</h4>
+    <h2 style="margin:5px 0 0 0;">{avg_price:,.0f}</h2>
+</div>
+""")
+```
+
+
+### Column
+```{python}
+#| echo: false
+range=int(round(df["range_miles"].mean(), 0).item())
+f"""
+<div style="
+    background:#fff3e0;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;">
+    <h4>Total Sales</h4>
+    <h2>{range:,}</h2>
+</div>
+"""
+```
+
+### Column
+```{python}
+#| echo: false
+total_sales = int(df["annual_sales_units"].sum())
+
+f"""
+<div style="
+    background:#fff3e0;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;">
+    <h4>Total Sales</h4>
+    <h2>{total_sales:,}</h2>
+</div>
+"""
+```
+
+
+
+
+
+# Market & Brand Insights
+
+# Performance vs Price
+
+# Customer & Value Analysis
+
+# Trends
+

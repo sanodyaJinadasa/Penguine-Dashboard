@@ -1,0 +1,193 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"EV market Analysis Dashboard\"\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    orientation: columns\n",
+        "    theme: cosmo\n",
+        "jupyter: python3\n",
+        "author: Sanodya Jinadasa\n",
+        "---"
+      ],
+      "id": "c7340b89"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import plotly.express as px\n",
+        "from IPython.display import Markdown\n",
+        "\n",
+        "df = pd.read_csv(\"ev_market_2026.csv\")"
+      ],
+      "id": "6db4270c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "964eff32"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "df.head(5)"
+      ],
+      "id": "3eaac900",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Column"
+      ],
+      "id": "6f185258"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_ev = df.shape[0]\n",
+        "\n",
+        "f\"\"\"\n",
+        "<div style=\"\n",
+        "    background:#e3f2fd;\n",
+        "    padding:15px;\n",
+        "    border-radius:10px;\n",
+        "    text-align:center;\">\n",
+        "    <h4>Total Vehicles</h4>\n",
+        "    <h2>{total_ev}</h2>\n",
+        "</div>\n",
+        "\"\"\""
+      ],
+      "id": "3c87fec6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Column"
+      ],
+      "id": "2d9ab807"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "avg_price = round(df[\"price_usd\"].mean(), 0).item()\n",
+        "\n",
+        "Markdown(f\"\"\"\n",
+        "<div style=\"background:#e8f5e9; padding:15px; border-radius:10px; text-align:center;\">\n",
+        "    <h4 style=\"margin:0;\">Avg Price ($)</h4>\n",
+        "    <h2 style=\"margin:5px 0 0 0;\">{avg_price:,.0f}</h2>\n",
+        "</div>\n",
+        "\"\"\")"
+      ],
+      "id": "8db7dbdc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Column"
+      ],
+      "id": "3caa73aa"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "range=int(round(df[\"range_miles\"].mean(), 0).item())\n",
+        "f\"\"\"\n",
+        "<div style=\"\n",
+        "    background:#fff3e0;\n",
+        "    padding:15px;\n",
+        "    border-radius:10px;\n",
+        "    text-align:center;\">\n",
+        "    <h4>Total Sales</h4>\n",
+        "    <h2>{range:,}</h2>\n",
+        "</div>\n",
+        "\"\"\""
+      ],
+      "id": "394b1320",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Column"
+      ],
+      "id": "30564d8f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_sales = int(df[\"annual_sales_units\"].sum())\n",
+        "\n",
+        "f\"\"\"\n",
+        "<div style=\"\n",
+        "    background:#fff3e0;\n",
+        "    padding:15px;\n",
+        "    border-radius:10px;\n",
+        "    text-align:center;\">\n",
+        "    <h4>Total Sales</h4>\n",
+        "    <h2>{total_sales:,}</h2>\n",
+        "</div>\n",
+        "\"\"\""
+      ],
+      "id": "687c0440",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Market & Brand Insights\n",
+        "\n",
+        "# Performance vs Price\n",
+        "\n",
+        "# Customer & Value Analysis\n",
+        "\n",
+        "# Trends\n"
+      ],
+      "id": "60483585"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

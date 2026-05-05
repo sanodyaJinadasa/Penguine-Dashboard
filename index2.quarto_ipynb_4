@@ -1,0 +1,58 @@
+{
+  "cells": [
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: EV market Analysis Dashboard\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    orientation: columns\n",
+        "    theme: cosmo\n",
+        "author: Sanodya Jinadasa\n",
+        "---"
+      ],
+      "id": "c20cf4ca"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "df = pd.read_csv(\"ev_market_2026.csv\")\n",
+        "df.head()"
+      ],
+      "id": "f4257486",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Row\n",
+        "\n",
+        "### Column\n",
+        "\n",
+        "Content here\n",
+        "\n",
+        "### Column\n",
+        "\n",
+        "More content here"
+      ],
+      "id": "02095d23"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

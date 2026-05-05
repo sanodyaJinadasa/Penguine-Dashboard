@@ -1,0 +1,72 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Untitled\"\n",
+        "format: html\n",
+        "editor: visual\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "## Quarto\n",
+        "\n",
+        "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.\n",
+        "\n",
+        "## Running Code\n",
+        "\n",
+        "When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:"
+      ],
+      "id": "b47c4e30"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "1 + 1"
+      ],
+      "id": "efef6011",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "You can add options to executable code like this"
+      ],
+      "id": "c70f572b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "2 * 2"
+      ],
+      "id": "8d268a64",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The `echo: false` option disables the printing of code (only output is displayed)."
+      ],
+      "id": "aac8b597"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

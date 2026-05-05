@@ -1,0 +1,74 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"EV market Analysis Dashboard\"\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    orientation: columns\n",
+        "    theme: cosmo\n",
+        "jupyter: python3\n",
+        "author: Sanodya Jinadasa\n",
+        "---"
+      ],
+      "id": "3a6d1866"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "df = pd.read_csv(\"ev_market_2026.csv\")"
+      ],
+      "id": "2de2443b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Overview"
+      ],
+      "id": "6ef21f9c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "df.head()"
+      ],
+      "id": "b55747bd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Market & Brand Insights\n",
+        "\n",
+        "## Performance vs Price\n",
+        "\n",
+        "## Customer & Value Analysis\n",
+        "\n",
+        "## Trends\n"
+      ],
+      "id": "0e4c30f2"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

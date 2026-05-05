@@ -1,0 +1,475 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "2d82f8e2",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: \"EV market Analysis Dashboard\"\n",
+    "format:\n",
+    "  dashboard:\n",
+    "    orientation: columns\n",
+    "    theme: cosmo\n",
+    "jupyter: python3\n",
+    "author: Sanodya Jinadasa\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "72b5fa8d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import plotly.express as px\n",
+    "\n",
+    "df = pd.read_csv(\"ev_market_2026.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ced9873b",
+   "metadata": {},
+   "source": [
+    "# Overview\n",
+    "\n",
+    "## Row"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "96648beb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>brand</th>\n",
+       "      <th>model</th>\n",
+       "      <th>year</th>\n",
+       "      <th>variant</th>\n",
+       "      <th>price_usd</th>\n",
+       "      <th>battery_capacity_kwh</th>\n",
+       "      <th>range_miles</th>\n",
+       "      <th>charging_speed_kw</th>\n",
+       "      <th>acceleration_0_60_mph</th>\n",
+       "      <th>top_speed_mph</th>\n",
+       "      <th>...</th>\n",
+       "      <th>body_type</th>\n",
+       "      <th>cargo_volume_cubic_ft</th>\n",
+       "      <th>weight_kg</th>\n",
+       "      <th>safety_rating</th>\n",
+       "      <th>autopilot_level</th>\n",
+       "      <th>country_of_origin</th>\n",
+       "      <th>market_segment</th>\n",
+       "      <th>annual_sales_units</th>\n",
+       "      <th>customer_rating</th>\n",
+       "      <th>warranty_years</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Volkswagen</td>\n",
+       "      <td>ID. Buzz</td>\n",
+       "      <td>2023</td>\n",
+       "      <td>Performance</td>\n",
+       "      <td>104880.80</td>\n",
+       "      <td>118.7</td>\n",
+       "      <td>400.0</td>\n",
+       "      <td>234.5</td>\n",
+       "      <td>3.04</td>\n",
+       "      <td>195.0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>Truck</td>\n",
+       "      <td>54.2</td>\n",
+       "      <td>2015.0</td>\n",
+       "      <td>4</td>\n",
+       "      <td>2</td>\n",
+       "      <td>Germany</td>\n",
+       "      <td>Luxury</td>\n",
+       "      <td>202182</td>\n",
+       "      <td>4.00</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Toyota</td>\n",
+       "      <td>bZ Compact SUV</td>\n",
+       "      <td>2022</td>\n",
+       "      <td>Premium</td>\n",
+       "      <td>48217.41</td>\n",
+       "      <td>58.8</td>\n",
+       "      <td>219.0</td>\n",
+       "      <td>148.1</td>\n",
+       "      <td>5.77</td>\n",
+       "      <td>159.0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>SUV</td>\n",
+       "      <td>69.0</td>\n",
+       "      <td>1709.0</td>\n",
+       "      <td>4</td>\n",
+       "      <td>0</td>\n",
+       "      <td>Japan</td>\n",
+       "      <td>Mid-range</td>\n",
+       "      <td>7146</td>\n",
+       "      <td>3.56</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>GM/Chevrolet</td>\n",
+       "      <td>Bolt EV</td>\n",
+       "      <td>2024</td>\n",
+       "      <td>Premium</td>\n",
+       "      <td>49651.12</td>\n",
+       "      <td>58.2</td>\n",
+       "      <td>225.0</td>\n",
+       "      <td>104.9</td>\n",
+       "      <td>6.84</td>\n",
+       "      <td>148.0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>Van</td>\n",
+       "      <td>77.0</td>\n",
+       "      <td>1533.0</td>\n",
+       "      <td>4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>US</td>\n",
+       "      <td>Mid-range</td>\n",
+       "      <td>16590</td>\n",
+       "      <td>3.70</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Kia</td>\n",
+       "      <td>Sportage EV</td>\n",
+       "      <td>2024</td>\n",
+       "      <td>Long Range</td>\n",
+       "      <td>38131.56</td>\n",
+       "      <td>102.5</td>\n",
+       "      <td>349.0</td>\n",
+       "      <td>66.5</td>\n",
+       "      <td>4.66</td>\n",
+       "      <td>176.0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>SUV</td>\n",
+       "      <td>65.8</td>\n",
+       "      <td>1935.0</td>\n",
+       "      <td>4</td>\n",
+       "      <td>2</td>\n",
+       "      <td>South Korea</td>\n",
+       "      <td>Mid-range</td>\n",
+       "      <td>127201</td>\n",
+       "      <td>3.81</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Tesla</td>\n",
+       "      <td>Model 3</td>\n",
+       "      <td>2022</td>\n",
+       "      <td>Long Range</td>\n",
+       "      <td>144079.87</td>\n",
+       "      <td>93.9</td>\n",
+       "      <td>314.0</td>\n",
+       "      <td>298.5</td>\n",
+       "      <td>5.64</td>\n",
+       "      <td>165.0</td>\n",
+       "      <td>...</td>\n",
+       "      <td>SUV</td>\n",
+       "      <td>38.3</td>\n",
+       "      <td>2229.0</td>\n",
+       "      <td>4</td>\n",
+       "      <td>2</td>\n",
+       "      <td>US</td>\n",
+       "      <td>Luxury</td>\n",
+       "      <td>196401</td>\n",
+       "      <td>3.83</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>5 rows × 24 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "          brand           model  year      variant  price_usd  \\\n",
+       "0    Volkswagen        ID. Buzz  2023  Performance  104880.80   \n",
+       "1        Toyota  bZ Compact SUV  2022      Premium   48217.41   \n",
+       "2  GM/Chevrolet         Bolt EV  2024      Premium   49651.12   \n",
+       "3           Kia     Sportage EV  2024   Long Range   38131.56   \n",
+       "4         Tesla         Model 3  2022   Long Range  144079.87   \n",
+       "\n",
+       "   battery_capacity_kwh  range_miles  charging_speed_kw  \\\n",
+       "0                 118.7        400.0              234.5   \n",
+       "1                  58.8        219.0              148.1   \n",
+       "2                  58.2        225.0              104.9   \n",
+       "3                 102.5        349.0               66.5   \n",
+       "4                  93.9        314.0              298.5   \n",
+       "\n",
+       "   acceleration_0_60_mph  top_speed_mph  ...  body_type  \\\n",
+       "0                   3.04          195.0  ...      Truck   \n",
+       "1                   5.77          159.0  ...        SUV   \n",
+       "2                   6.84          148.0  ...        Van   \n",
+       "3                   4.66          176.0  ...        SUV   \n",
+       "4                   5.64          165.0  ...        SUV   \n",
+       "\n",
+       "   cargo_volume_cubic_ft weight_kg  safety_rating autopilot_level  \\\n",
+       "0                   54.2    2015.0              4               2   \n",
+       "1                   69.0    1709.0              4               0   \n",
+       "2                   77.0    1533.0              4               1   \n",
+       "3                   65.8    1935.0              4               2   \n",
+       "4                   38.3    2229.0              4               2   \n",
+       "\n",
+       "   country_of_origin  market_segment  annual_sales_units  customer_rating  \\\n",
+       "0            Germany          Luxury              202182             4.00   \n",
+       "1              Japan       Mid-range                7146             3.56   \n",
+       "2                 US       Mid-range               16590             3.70   \n",
+       "3        South Korea       Mid-range              127201             3.81   \n",
+       "4                 US          Luxury              196401             3.83   \n",
+       "\n",
+       "  warranty_years  \n",
+       "0              4  \n",
+       "1              3  \n",
+       "2              3  \n",
+       "3              3  \n",
+       "4              4  \n",
+       "\n",
+       "[5 rows x 24 columns]"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.head(5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9372be82",
+   "metadata": {},
+   "source": [
+    "## Row\n",
+    "\n",
+    "### Column"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "306559fa",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'\\n<div style=\"\\n    background:#e3f2fd;\\n    padding:15px;\\n    border-radius:10px;\\n    text-align:center;\">\\n    <h4>Total Vehicles</h4>\\n    <h2>2000</h2>\\n</div>\\n'"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "total_ev = df.shape[0]\n",
+    "\n",
+    "f\"\"\"\n",
+    "<div style=\"\n",
+    "    background:#e3f2fd;\n",
+    "    padding:15px;\n",
+    "    border-radius:10px;\n",
+    "    text-align:center;\">\n",
+    "    <h4>Total Vehicles</h4>\n",
+    "    <h2>{total_ev}</h2>\n",
+    "</div>\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75c246b3",
+   "metadata": {},
+   "source": [
+    "### Column"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "a9b31c34",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'\\n<div style=\"\\n    background:#e8f5e9;\\n    padding:15px;\\n    border-radius:10px;\\n    text-align:center;\">\\n    <h4>Avg Price ($)</h4>\\n    <h2>78,874</h2>\\n</div>\\n'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "avg_price = round(df[\"price_usd\"].mean(), 0).item()\n",
+    "\n",
+    "f\"\"\"\n",
+    "<div style=\"\n",
+    "    background:#e8f5e9;\n",
+    "    padding:15px;\n",
+    "    border-radius:10px;\n",
+    "    text-align:center;\">\n",
+    "    <h4>Avg Price ($)</h4>\n",
+    "    <h2>{avg_price:,.0f}</h2>\n",
+    "</div>\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fb72e1f8",
+   "metadata": {},
+   "source": [
+    "### Column"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "795a4d1d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'\\n<div style=\"\\n    background:#fff3e0;\\n    padding:15px;\\n    border-radius:10px;\\n    text-align:center;\">\\n    <h4>Total Sales</h4>\\n    <h2>262</h2>\\n</div>\\n'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "range=int(round(df[\"range_miles\"].mean(), 0).item())\n",
+    "f\"\"\"\n",
+    "<div style=\"\n",
+    "    background:#fff3e0;\n",
+    "    padding:15px;\n",
+    "    border-radius:10px;\n",
+    "    text-align:center;\">\n",
+    "    <h4>Total Sales</h4>\n",
+    "    <h2>{range:,}</h2>\n",
+    "</div>\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "634fa753",
+   "metadata": {},
+   "source": [
+    "### Column"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "0c120883",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'\\n<div style=\"\\n    background:#fff3e0;\\n    padding:15px;\\n    border-radius:10px;\\n    text-align:center;\">\\n    <h4>Total Sales</h4>\\n    <h2>259,307,184</h2>\\n</div>\\n'"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "total_sales = int(df[\"annual_sales_units\"].sum())\n",
+    "\n",
+    "f\"\"\"\n",
+    "<div style=\"\n",
+    "    background:#fff3e0;\n",
+    "    padding:15px;\n",
+    "    border-radius:10px;\n",
+    "    text-align:center;\">\n",
+    "    <h4>Total Sales</h4>\n",
+    "    <h2>{total_sales:,}</h2>\n",
+    "</div>\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eb329af8",
+   "metadata": {},
+   "source": [
+    "# Market & Brand Insights\n",
+    "\n",
+    "# Performance vs Price\n",
+    "\n",
+    "# Customer & Value Analysis\n",
+    "\n",
+    "# Trends\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
