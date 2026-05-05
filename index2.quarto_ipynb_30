@@ -1,0 +1,107 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"EV market Analysis Dashboard\"\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    orientation: columns\n",
+        "    theme: cosmo\n",
+        "jupyter: python3\n",
+        "author: Sanodya Jinadasa\n",
+        "---"
+      ],
+      "id": "0a2728c9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import plotly.express as px\n",
+        "from IPython.display import Markdown\n",
+        "\n",
+        "df = pd.read_csv(\"ev_market_2026.csv\")"
+      ],
+      "id": "f3972a97",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview\n",
+        "## column"
+      ],
+      "id": "35138834"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "Data Snapshot"
+      },
+      "source": [
+        "# Standard output for dataframes works fine without Markdown()\n",
+        "df.head(5)"
+      ],
+      "id": "ed263863",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### column"
+      ],
+      "id": "b22db18d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_ev = df.shape[0]\n",
+        "\n",
+        "# Markdown() tells Quarto to render the string as HTML\n",
+        "Markdown(f\"\"\"\n",
+        "<div style=\"background:#e3f2fd; padding:15px; border-radius:10px; text-align:center;\">\n",
+        "    <h4 style=\"margin:0;\">Total Vehicles</h4>\n",
+        "    <h2 style=\"margin:5px 0 0 0;\">{total_ev}</h2>\n",
+        "</div>\n",
+        "\"\"\")"
+      ],
+      "id": "1ba03206",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Market & Brand Insights\n",
+        "\n",
+        "# Performance vs Price\n",
+        "\n",
+        "# Customer & Value Analysis\n",
+        "\n",
+        "# Trends\n"
+      ],
+      "id": "412e81c7"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

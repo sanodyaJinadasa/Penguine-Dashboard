@@ -1,0 +1,161 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"EV market Analysis Dashboard\"\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    orientation: columns\n",
+        "    theme: cosmo\n",
+        "jupyter: python3\n",
+        "author: Sanodya Jinadasa\n",
+        "---"
+      ],
+      "id": "1bd03b0c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import plotly.express as px\n",
+        "from IPython.display import Markdown\n",
+        "\n",
+        "df = pd.read_csv(\"ev_market_2026.csv\")"
+      ],
+      "id": "ce3b7eca",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Overview\n",
+        "## column"
+      ],
+      "id": "b5dc9e2a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "title": "Data Snapshot"
+      },
+      "source": [
+        "# Standard output for dataframes works fine without Markdown()\n",
+        "df.head(5)"
+      ],
+      "id": "4d6c6f77",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## column\n",
+        "\n",
+        "### Row"
+      ],
+      "id": "1d8885db"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_ev = df.shape[0]\n",
+        "\n",
+        "f\"\"\"\n",
+        "<div style=\"\n",
+        "    background:#e3f2fd;\n",
+        "    padding:15px;\n",
+        "    border-radius:10px;\n",
+        "    text-align:center;\">\n",
+        "    <h4>Total Vehicles</h4>\n",
+        "    <h2>{total_ev}</h2>\n",
+        "</div>\n",
+        "\"\"\""
+      ],
+      "id": "1216904e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Row"
+      ],
+      "id": "ddc44505"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_ev = df.shape[0]\n",
+        "\n",
+        "f\"\"\"\n",
+        "<div style=\"\n",
+        "    background:#e3f2fd;\n",
+        "    padding:15px;\n",
+        "    border-radius:10px;\n",
+        "    text-align:center;\">\n",
+        "    <h4>Total Vehicles</h4>\n",
+        "    <h2>{total_ev}</h2>\n",
+        "</div>\n",
+        "\"\"\""
+      ],
+      "id": "7810d33c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "total_ev = df.shape[0]\n",
+        "\n",
+        "# Markdown() tells Quarto to render the string as HTML\n",
+        "Markdown(f\"\"\"\n",
+        "<div style=\"background:#e3f2fd; padding:15px; border-radius:10px; text-align:center;\">\n",
+        "    <h4 style=\"margin:0;\">Total Vehicles</h4>\n",
+        "    <h2 style=\"margin:5px 0 0 0;\">{total_ev}</h2>\n",
+        "</div>\n",
+        "\"\"\")"
+      ],
+      "id": "65def3d3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Market & Brand Insights\n",
+        "\n",
+        "# Performance vs Price\n",
+        "\n",
+        "# Customer & Value Analysis\n",
+        "\n",
+        "# Trends\n"
+      ],
+      "id": "48eda374"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER-PC\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
