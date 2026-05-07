@@ -21,7 +21,9 @@ df = pd.read_csv("ev_market_2026.csv")
 
 # Overview
 
-## column
+## Row {height=30%}
+
+### {width=100%}
 
 ```{python}
 #| title: "Data Snapshot"
@@ -30,26 +32,7 @@ df.head(5)
 ```
 
 
-## column
-
-### Row
-```{python}
-#| echo: false
-total_ev = df.shape[0]
-
-f"""
-<div style="
-    background:#e3f2fd;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;">
-    <h4>Total Vehicles</h4>
-    <h2>{total_ev}</h2>
-</div>
-"""
-```
-
-### Row
+## Row {height=70%}
 ```{python}
 #| echo: false
 total_ev = df.shape[0]
@@ -67,7 +50,22 @@ f"""
 ```
 
 
-### Row
+```{python}
+#| echo: false
+total_ev = df.shape[0]
+
+f"""
+<div style="
+    background:#e3f2fd;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;">
+    <h4>Total Vehicles</h4>
+    <h2>{total_ev}</h2>
+</div>
+"""
+```
+
 ```{python}
 #| echo: false
 total_ev = df.shape[0]
